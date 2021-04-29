@@ -17,7 +17,7 @@ column_oxygen=['Name','Address','Area','Total Oxygen Cylinders']
 column_remdesivir=['Name','Address','Area','Total Remdesivir vaccine']
 tiffin_area=['Name','Area','Address','Phone Number']
 temp=list()
-@app.route("/")
+@app.route("/",methods =['POST','GET'])
 def start():
     conn = mysql.connect()
     cursor =conn.cursor()
@@ -33,7 +33,7 @@ def start():
             temp2.append(x)
     print(temp2)
     return render_template("search.html",temp=temp2)
-@app.route("/home")
+@app.route("/home",methods =['POST','GET'])
 def home():
     return render_template("index.html")
 
@@ -328,4 +328,4 @@ def register():
         return render_template("register.html",plasma_data=plasma_data,plasma_columns=plasma_columns)
 
 if __name__=="__main__":
-    app.run()
+    app.run(threaded=True,port=5000)
