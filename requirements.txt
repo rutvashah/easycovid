@@ -2,4 +2,5 @@ requests==2.24.0
 Flask==1.1.2
 beautifulsoup4==4.9.3
 Flask_Bcrypt==0.7.1
-gunicorn
+gunicorn==19.9.0
+Jinja2==2.10.1
