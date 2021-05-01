@@ -10,7 +10,7 @@ ip_address = socket.gethostbyname(host)
 print(ip_address)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.bind((ip_address,port))
-conn = pymysql.connect(host=ip_address, user="%", password="", database="medical",charset='utf8mb4',port=3307)
+conn = pymysql.connect(host=ip_address, user="root", password="root", database="medical",charset='utf8mb4',port=3306)
 
 
 app=Flask(__name__)
